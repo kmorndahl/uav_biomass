@@ -1,0 +1,442 @@
+id,site_code,quadrat_num,observer,viereck_coarse,viereck_fine,num_species
+1,AMSUMMIT,0m,LWE,Mesic graminoid herbaceous,Sedge-dryas tundra,8
+2,AMSUMMIT,10m,LWE,Mesic graminoid herbaceous,Tussock tundra,8
+3,AMSUMMIT,20m,LWE,Mesic graminoid herbaceous,Tussock tundra,6
+4,AMSUMMIT,30m,LWE,Mesic graminoid herbaceous,Tussock tundra,7
+5,AMSUMMIT,40m,LWE,Mesic graminoid herbaceous,Tussock tundra,8
+6,AMSUMMIT,50m,LWE,Open low scrub,Mixed shrub-sedge tussock tundra,9
+7,AMSUMMIT,60m,LWE,Open low scrub,Mixed shrub-sedge tussock tundra,7
+8,AMSUMMIT,70m,LWE,Open low scrub,Mixed shrub-sedge tussock tundra,6
+9,AMSUMMIT,80m,LWE,Open low scrub,Mixed shrub-sedge tussock tundra,8
+10,AMSUMMIT,90m,LWE,Open low scrub,Mixed shrub-sedge tussock tundra,5
+11,AUFEIS,0m,KO,Mesic graminoid herbaceous,Tussock tundra,10
+12,AUFEIS,10m,HC,Mesic graminoid herbaceous,Tussock tundra,10
+13,AUFEIS,20m,KO,Mesic graminoid herbaceous,Tussock tundra,11
+14,AUFEIS,30m,HC,Mesic graminoid herbaceous,Tussock tundra,10
+15,AUFEIS,40m,KO,Mesic graminoid herbaceous,Tussock tundra,7
+16,AUFEIS,50m,HC,Mesic graminoid herbaceous,Tussock tundra,9
+17,AUFEIS,60m,KO,Mesic graminoid herbaceous,Tussock tundra,11
+18,AUFEIS,70m,HC,Wet graminoid herbaceous,Wet sedge meadow tundra,10
+19,AUFEIS,80m,KO,Wet graminoid herbaceous,Wet sedge meadow tundra,10
+20,AUFEIS,90m,HC,Wet graminoid herbaceous,Wet sedge meadow tundra,8
+21,BABBAGE,0m,RP,Closed low scrub,Shrub birch-willow,19
+22,BABBAGE,10m,RP,Mesic graminoid herbaceous,Sedge-birch tundra,15
+23,BABBAGE,20m,RP,Open low scrub,Willow-sedge shrub tundra,14
+24,BABBAGE,30m,RP,Open low scrub,Willow-sedge shrub tundra,16
+25,BABBAGE,40m,RP,Open low scrub,Shrub birch-ericaceous shrub bog,18
+26,BABBAGE,50m,RP,Open low scrub,Mixed shrub-sedge tussock tundra,15
+27,BABBAGE,60m,RP,Mesic graminoid herbaceous,Tussock tundra,8
+28,BABBAGE,70m,RP,Open low scrub,Mixed shrub-sedge tussock tundra,13
+29,BABBAGE,80m,RP,Open low scrub,Mixed shrub-sedge tussock tundra,21
+30,BABBAGE,90m,RP,Open low scrub,Shrub birch-willow,20
+31,BLOWRIVER,0m,KO,Open low scrub,Mixed shrub-sedge tussock tundra,12
+32,BLOWRIVER,10m,KO,Mesic graminoid herbaceous,Tussock tundra,8
+33,BLOWRIVER,20m,KO,Mesic graminoid herbaceous,Tussock tundra,8
+34,BLOWRIVER,30m,KO,Mesic graminoid herbaceous,Tussock tundra,5
+35,BLOWRIVER,40m,KO,Open low scrub,Mixed shrub-sedge tussock tundra,7
+36,BLOWRIVER,80m,KO,Open low scrub,Shrub birch-willow,5
+37,BLOWRIVER,50m,KO,Closed tall scrub,Willow-tall,2
+38,BLOWRIVER,60m,KO,Closed tall scrub,Willow-tall,4
+39,BLOWRIVER,70m,KO,Closed tall scrub,Willow-tall,10
+40,BLOWRIVER,90m,KO,Open tall scrub,Willow-tall,6
+41,BROWNSCREEK,0m,KO,Dryas dwarf scrub,Dryas tundra,15
+42,BROWNSCREEK,10m,KO,Dryas dwarf scrub,Dryas tundra,11
+43,BROWNSCREEK,20m,KO,Dryas dwarf scrub,Dryas tundra,15
+44,BROWNSCREEK,30m,KO,Dryas dwarf scrub,Dryas tundra,13
+45,BROWNSCREEK,40m,KO,Dryas dwarf scrub,Dryas tundra,13
+46,BROWNSCREEK,50m,KO,Closed low scrub,Shrub birch-thickets,7
+47,BROWNSCREEK,60m,KO,Dryas dwarf scrub,Dryas tundra,13
+48,BROWNSCREEK,70m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,12
+49,BROWNSCREEK,80m,KO,Dryas dwarf scrub,Dryas tundra,13
+50,BROWNSCREEK,90m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,10
+51,BUTLER,0m,SP,Dryas dwarf scrub,Dryas tundra,17
+52,BUTLER,10m,RP,Dryas dwarf scrub,Dryas tundra,18
+53,BUTLER,20m,SP,Dryas dwarf scrub,Dryas tundra,16
+54,BUTLER,30m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,19
+55,BUTLER,40m,SP,Dryas dwarf scrub,Dryas tundra,13
+56,BUTLER,50m,SP,Dryas dwarf scrub,Dryas tundra,25
+57,BUTLER,60m,SP,Sparsely vegetated,Sparsely vegetated,12
+58,BUTLER,70m,SP,Sparsely vegetated,Sparsely vegetated,11
+59,BUTLER,80m,SP,Dryas dwarf scrub,Dryas tundra,15
+60,BUTLER,90m,SP,Dryas dwarf scrub,Dryas tundra,18
+61,CALF,0m,RP,Mesic graminoid herbaceous,Tussock tundra,11
+62,CALF,10m,KO,Mesic graminoid herbaceous,Tussock tundra,10
+63,CALF,20m,KO,Mesic graminoid herbaceous,Tussock tundra,7
+64,CALF,30m,KO,Open low scrub,Mixed shrub-sedge tussock tundra,7
+65,CALF,40m,RP,Open low scrub,Mixed shrub-sedge tussock tundra,10
+66,CALF,50m,KO,Mesic graminoid herbaceous,Tussock tundra,9
+67,CALF,60m,KO,Mesic graminoid herbaceous,Tussock tundra,11
+68,CALF,70m,KO,Mesic graminoid herbaceous,Tussock tundra,9
+69,CALF,80m,KO,Mesic graminoid herbaceous,Tussock tundra,9
+70,CALF,90m,KO,Mesic graminoid herbaceous,Tussock tundra,9
+71,COALCREEK,0m,SP,Lichen,Foliose and fruticose lichen,13
+72,COALCREEK,10m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+73,COALCREEK,20m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,16
+74,COALCREEK,30m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+75,COALCREEK,40m,SP,Willow dwarf scrub,Willow tundra,14
+76,COALCREEK,50m,RP,Dryas dwarf scrub,Dryas tundra,15
+77,COALCREEK,60m,SP,Sparsely vegetated,Sparsely vegetated,16
+78,COALCREEK,70m,RP,Sparsely vegetated,Sparsely vegetated,13
+79,COALCREEK,80m,SP,Sparsely vegetated,Sparsely vegetated,16
+80,COALCREEK,90m,RP,Sparsely vegetated,Sparsely vegetated,16
+81,DEW,0m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,19
+82,DEW,10m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+83,DEW,20m,RP,Ericaceous dwarf scrub,Vaccinium tundra,16
+84,DEW,30m,RP,Ericaceous dwarf scrub,Bearberry tundra,11
+85,DEW,40m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,14
+86,DEW,50m,RP,Ericaceous dwarf scrub,Bearberry tundra,18
+87,DEW,60m,RP,Willow dwarf scrub,Willow tundra,14
+88,DEW,70m,RP,Ericaceous dwarf scrub,Vaccinium tundra,21
+89,DEW,80m,RP,Ericaceous dwarf scrub,Bearberry tundra,15
+90,DEW,90m,RP,Ericaceous dwarf scrub,Bearberry tundra,15
+91,EXCELSIOR,0m,SP,Lichen,Foliose and fruticose lichen,18
+92,EXCELSIOR,10m,SP,Lichen,Foliose and fruticose lichen,20
+93,EXCELSIOR,20m,SP,Ericaceous dwarf scrub,Vaccinium tundra,18
+94,EXCELSIOR,30m,SP,Lichen,Foliose and fruticose lichen,19
+95,EXCELSIOR,40m,SP,Sparsely vegetated,Sparsely vegetated,11
+96,EXCELSIOR,50m,SP,Sparsely vegetated,Sparsely vegetated,14
+97,EXCELSIOR,60m,SP,Ericaceous dwarf scrub,Bearberry tundra,15
+98,EXCELSIOR,70m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,12
+99,EXCELSIOR,80m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+100,EXCELSIOR,90m,SP,Ericaceous dwarf scrub,Vaccinium tundra,16
+101,FIRTH,60m,RP,Open low scrub,Willow-low,11
+102,FIRTH,0m,RP,Mesic graminoid herbaceous,Sedge-dryas tundra,11
+103,FIRTH,10m,RP,Mesic graminoid herbaceous,Sedge-dryas tundra,11
+104,FIRTH,20m,RP,Needleleaf woodland,White spruce,11
+105,FIRTH,30m,RP,Closed low scrub,Shrub birch-willow,7
+106,FIRTH,40m,RP,Mesic graminoid herbaceous,Sedge-willow tundra,8
+107,FIRTH,50m,RP,Mesic graminoid herbaceous,Sedge-willow tundra,8
+108,FIRTH,70m,KO,Sparsely vegetated,Sparsely vegetated,8
+109,FIRTH,80m,RP,Dryas dwarf scrub,Dryas tundra,12
+110,FIRTH,90m,KO,Mesic graminoid herbaceous,Sedge-dryas tundra,8
+121,FRYINGPAN,0m,LWE,Mesic graminoid herbaceous,Sedge-willow tundra,13
+122,FRYINGPAN,10m,KO,Open low scrub,Shrub birch-willow,7
+123,FRYINGPAN,20m,LWE,Mesic graminoid herbaceous,Sedge-willow tundra,16
+124,FRYINGPAN,30m,KO,Wet graminoid herbaceous,Wet sedge meadow tundra,11
+125,FRYINGPAN,40m,LWE,Mesic graminoid herbaceous,Sedge-willow tundra,17
+126,FRYINGPAN,50m,KO,Mesic graminoid herbaceous,Sedge-willow tundra,15
+127,FRYINGPAN,60m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,12
+128,FRYINGPAN,70m,KO,Open low scrub,Shrub birch-willow,12
+129,FRYINGPAN,80m,LWE,Open low scrub,Shrub birch-willow,13
+130,FRYINGPAN,90m,KO,Open low scrub,Shrub birch-willow,14
+131,GRANITE,0m,LWE,Open low scrub,Shrub birch-willow,10
+132,GRANITE,10m,JH,Open low scrub,Shrub birch-willow,9
+133,GRANITE,20m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,17
+134,GRANITE,30m,JH,Open low scrub,Shrub birch-willow,5
+135,GRANITE,40m,LWE,Willow dwarf scrub,Willow tundra,14
+136,GRANITE,50m,JH,Mesic graminoid herbaceous,Sedge-willow tundra,8
+137,GRANITE,60m,LWE,Mesic graminoid herbaceous,Sedge-willow tundra,11
+138,GRANITE,70m,JH,Dry graminoid herbaceous,Midgrass-herb,9
+139,GRANITE,80m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+140,GRANITE,90m,JH,Dryas dwarf scrub,Dryas-sedge tundra,13
+141,GULCH,0m,LWE,Wet graminoid herbaceous,Subarctic lowland sedge wet meadow,9
+142,GULCH,10m,JH,Mesic forb herbaceous,Mixed herbs,8
+143,GULCH,20m,LWE,Dryas dwarf scrub,Dryas-sedge tundra,5
+144,GULCH,30m,JH,Dryas dwarf scrub,Dryas-sedge tundra,8
+145,GULCH,40m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,6
+146,GULCH,50m,JH,Dryas dwarf scrub,Dryas-sedge tundra,8
+147,GULCH,60m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,11
+148,GULCH,70m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,5
+149,GULCH,80m,LWE,Dryas dwarf scrub,Dryas-sedge tundra,11
+150,GULCH,90m,JH,Dryas dwarf scrub,Dryas-sedge tundra,9
+151,KINGSOLOMON,0m,SP,Ericaceous dwarf scrub,Vaccinium tundra,10
+152,KINGSOLOMON,10m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+153,KINGSOLOMON,20m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+154,KINGSOLOMON,30m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,8
+155,KINGSOLOMON,40m,SP,Ericaceous dwarf scrub,Bearberry tundra,8
+156,KINGSOLOMON,50m,SP,Ericaceous dwarf scrub,Bearberry tundra,7
+157,KINGSOLOMON,60m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,8
+158,KINGSOLOMON,70m,SP,Ericaceous dwarf scrub,Bearberry tundra,9
+159,KINGSOLOMON,80m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+160,KINGSOLOMON,90m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+161,LOWERQUARRY,0m,RP,Open low scrub,Mixed shrub-sedge tussock tundra,20
+162,LOWERQUARRY,10m,RP,Mesic graminoid herbaceous,Tussock tundra,12
+163,LOWERQUARRY,20m,RP,Mesic graminoid herbaceous,Sedge-willow tundra,20
+164,LOWERQUARRY,30m,RP,Mesic graminoid herbaceous,Sedge-willow tundra,17
+165,LOWERQUARRY,40m,RP,Open low scrub,Mixed shrub-sedge tussock tundra,15
+166,LOWERQUARRY,50m,RP,Mesic graminoid herbaceous,Tussock tundra,9
+167,LOWERQUARRY,60m,RP,Ericaceous dwarf scrub,Vaccinium tundra,18
+168,LOWERQUARRY,70m,RP,Mesic graminoid herbaceous,Tussock tundra,13
+169,LOWERQUARRY,80m,KO,Open low scrub,Shrub birch-willow,14
+170,LOWERQUARRY,90m,RP,Mesic graminoid herbaceous,Tussock tundra,15
+171,MATSONCREEK,0m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+172,MATSONCREEK,10m,JP,Wet graminoid herbaceous,Wet sedge meadow tundra,9
+173,MATSONCREEK,20m,JP,Mesic graminoid herbaceous,Sedge-willow tundra,10
+174,MATSONCREEK,30m,JP,Sparsely vegetated,Sparsely vegetated,12
+175,MATSONCREEK,40m,JP,Mesic graminoid herbaceous,Sedge-willow tundra,13
+176,MATSONCREEK,50m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,10
+177,MATSONCREEK,60m,JP,Dryas dwarf scrub,Dryas-sedge tundra,13
+178,MATSONCREEK,70m,JP,Ericaceous dwarf scrub,Vaccinium tundra,13
+179,MATSONCREEK,80m,JP,Open low scrub,Shrub birch-willow,10
+180,MATSONCREEK,90m,JP,Mesic graminoid herbaceous,Sedge-willow tundra,12
+181,MOLLYCREEK,0m,EJ,Ericaceous dwarf scrub,Vaccinium tundra,13
+182,MOLLYCREEK,10m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+183,MOLLYCREEK,20m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,10
+184,MOLLYCREEK,30m,EJ,Lichen,Foliose and fruticose lichen,14
+185,MOLLYCREEK,40m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,16
+186,MOLLYCREEK,50m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+187,MOLLYCREEK,60m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,14
+188,MOLLYCREEK,70m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,10
+189,MOLLYCREEK,80m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,12
+190,MOLLYCREEK,90m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+191,MOSQUITOCREEK,0m,EJ,Dryas dwarf scrub,Dryas-lichen tundra,12
+192,MOSQUITOCREEK,10m,EJ,Ericaceous dwarf scrub,Vaccinium tundra,12
+193,MOSQUITOCREEK,20m,EJ,Dryas dwarf scrub,Dryas tundra,10
+194,MOSQUITOCREEK,30m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+195,MOSQUITOCREEK,40m,EJ,Dryas dwarf scrub,Dryas tundra,7
+196,MOSQUITOCREEK,50m,EJ,Ericaceous dwarf scrub,Vaccinium tundra,8
+197,MOSQUITOCREEK,60m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+198,MOSQUITOCREEK,70m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,8
+199,MOSQUITOCREEK,80m,EJ,Open low scrub,Mesic shrub birch-ericaceous shrub,12
+200,MOSQUITOCREEK,90m,EJ,Ericaceous dwarf scrub,Vaccinium tundra,10
+201,OBRIAN,0m,AD,Dryas dwarf scrub,Dryas tundra,24
+202,OBRIAN,10m,JH,Dryas dwarf scrub,Dryas-lichen tundra,20
+203,OBRIAN,20m,AD,Sparsely vegetated,Sparsely vegetated,20
+204,OBRIAN,30m,JH,Ericaceous dwarf scrub,Vaccinium tundra,17
+205,OBRIAN,40m,AD,Dryas dwarf scrub,Dryas-lichen tundra,19
+206,OBRIAN,50m,JH,Sparsely vegetated,Sparsely vegetated,16
+207,OBRIAN,60m,AD,Sparsely vegetated,Sparsely vegetated,19
+208,OBRIAN,70m,JH,Ericaceous dwarf scrub,Vaccinium tundra,15
+209,OBRIAN,80m,AD,Lichen,Foliose and fruticose lichen,20
+210,OBRIAN,90m,JH,Dryas dwarf scrub,Dryas-sedge tundra,15
+211,OGILVIE,0m,RP,Dry forb herbaceous,Alpine herb-sedge,15
+212,OGILVIE,10m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+213,OGILVIE,20m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,15
+214,OGILVIE,30m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+215,OGILVIE,40m,RP,Needleleaf woodland,White spruce,17
+216,OGILVIE,50m,KO,Ericaceous dwarf scrub,Vaccinium tundra,13
+217,OGILVIE,60m,RP,Ericaceous dwarf scrub,Vaccinium tundra,18
+218,OGILVIE,70m,KO,Ericaceous dwarf scrub,Vaccinium tundra,10
+219,OGILVIE,80m,RP,Ericaceous dwarf scrub,Vaccinium tundra,17
+220,OGILVIE,90m,KO,Ericaceous dwarf scrub,Vaccinium tundra,11
+221,PAGE,70m,KO,Open low scrub,Willow-low,12
+222,PAGE,0m,RP,Ericaceous dwarf scrub,Cassiope tundra,18
+223,PAGE,10m,KO,Ericaceous dwarf scrub,Cassiope tundra,12
+224,PAGE,20m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,19
+225,PAGE,30m,KO,Ericaceous dwarf scrub,Vaccinium tundra,14
+226,PAGE,40m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,15
+227,PAGE,50m,KO,Ericaceous dwarf scrub,Vaccinium tundra,14
+228,PAGE,60m,KO,Ericaceous dwarf scrub,Vaccinium tundra,16
+229,PAGE,80m,KO,Mesic graminoid herbaceous,Sedge-willow tundra,11
+230,PAGE,90m,KO,Ericaceous dwarf scrub,Vaccinium tundra,8
+231,PEDRO,0m,KO,Ericaceous dwarf scrub,Vaccinium tundra,9
+232,PEDRO,10m,KO,Closed tall scrub,Shrub birch,8
+233,PEDRO,20m,KO,Closed tall scrub,Shrub birch,8
+234,PEDRO,30m,AR,Closed tall scrub,Shrub birch,8
+235,PEDRO,40m,AR,Closed tall scrub,Shrub birch,5
+236,PEDRO,50m,KO,Closed tall scrub,Shrub birch,7
+237,PEDRO,60m,KO,Closed tall scrub,Shrub birch,10
+238,PEDRO,70m,KO,Closed tall scrub,Shrub birch,7
+239,PEDRO,80m,AR,Closed tall scrub,Shrub birch,5
+240,PEDRO,90m,KO,Closed tall scrub,Shrub birch,5
+241,PINNELL,0m,JH,Ericaceous dwarf scrub,Cassiope tundra,13
+242,PINNELL,10m,JH,Lichen,Foliose and fruticose lichen,17
+243,PINNELL,20m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+244,PINNELL,30m,JH,Lichen,Foliose and fruticose lichen,18
+245,PINNELL,40m,JH,Lichen,Foliose and fruticose lichen,15
+246,PINNELL,50m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+247,PINNELL,60m,JH,Lichen,Foliose and fruticose lichen,8
+248,PINNELL,70m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+249,PINNELL,80m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+250,PINNELL,90m,JH,Ericaceous dwarf scrub,Crowberry tundra,14
+251,PORCUPINECREEK,0m,AD,Ericaceous dwarf scrub,Vaccinium tundra,20
+252,PORCUPINECREEK,10m,JH,Ericaceous dwarf scrub,Vaccinium tundra,12
+253,PORCUPINECREEK,20m,AD,Ericaceous dwarf scrub,Vaccinium tundra,17
+254,PORCUPINECREEK,30m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+255,PORCUPINECREEK,40m,AD,Ericaceous dwarf scrub,Vaccinium tundra,16
+256,PORCUPINECREEK,50m,JH,Ericaceous dwarf scrub,Vaccinium tundra,19
+257,PORCUPINECREEK,60m,AD,Ericaceous dwarf scrub,Vaccinium tundra,16
+258,PORCUPINECREEK,70m,JH,Ericaceous dwarf scrub,Vaccinium tundra,8
+259,PORCUPINECREEK,80m,AD,Ericaceous dwarf scrub,Vaccinium tundra,21
+260,PORCUPINECREEK,90m,JH,Ericaceous dwarf scrub,Vaccinium tundra,9
+261,PRINDLE,0m,JP,Lichen,Foliose and fruticose lichen,16
+262,PRINDLE,10m,JP,Dryas dwarf scrub,Dryas-lichen tundra,18
+263,PRINDLE,20m,JP,Lichen,Foliose and fruticose lichen,16
+264,PRINDLE,30m,JP,Lichen,Foliose and fruticose lichen,19
+265,PRINDLE,40m,JP,Dryas dwarf scrub,Dryas-lichen tundra,17
+266,PRINDLE,50m,JP,Dryas dwarf scrub,Dryas-lichen tundra,15
+267,PRINDLE,60m,JP,Ericaceous dwarf scrub,Bearberry tundra,17
+268,PRINDLE,70m,JP,Dryas dwarf scrub,Dryas-lichen tundra,20
+269,PRINDLE,80m,JP,Dryas dwarf scrub,Dryas-lichen tundra,12
+270,PRINDLE,90m,JP,Dryas dwarf scrub,Dryas-lichen tundra,13
+271,QUARTZ02,0m,KO,Lichen,Foliose and fruticose lichen,15
+272,QUARTZ02,10m,JP,Ericaceous dwarf scrub,Cassiope tundra,12
+273,QUARTZ02,20m,KO,Ericaceous dwarf scrub,Vaccinium tundra,10
+274,QUARTZ02,30m,JP,Lichen,Foliose and fruticose lichen,14
+275,QUARTZ02,40m,KO,Lichen,Foliose and fruticose lichen,19
+276,QUARTZ02,50m,JP,Ericaceous dwarf scrub,Vaccinium tundra,16
+277,QUARTZ02,60m,KO,Ericaceous dwarf scrub,Vaccinium tundra,12
+278,QUARTZ02,70m,JP,Lichen,Foliose and fruticose lichen,15
+279,QUARTZ02,80m,KO,Lichen,Foliose and fruticose lichen,14
+280,QUARTZ02,90m,JP,Sparsely vegetated,Sparsely vegetated,22
+281,SCHAR,0m,KO,Ericaceous dwarf scrub,Vaccinium tundra,12
+282,SCHAR,10m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,10
+283,SCHAR,20m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+284,SCHAR,30m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,3
+285,SCHAR,40m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+286,SCHAR,50m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+287,SCHAR,60m,KO,Ericaceous dwarf scrub,Vaccinium tundra,11
+288,SCHAR,70m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+289,SCHAR,80m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,14
+290,SCHAR,90m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,14
+291,SEELA,0m,MK,Dryas dwarf scrub,Dryas-sedge tundra,8
+292,SEELA,10m,MK,Dryas dwarf scrub,Dryas-sedge tundra,6
+293,SEELA,20m,MK,Dryas dwarf scrub,Dryas-sedge tundra,6
+294,SEELA,30m,MK,Dryas dwarf scrub,Dryas-sedge tundra,8
+295,SEELA,40m,MK,Dryas dwarf scrub,Dryas tundra,14
+296,SEELA,50m,MK,Ericaceous dwarf scrub,Cassiope tundra,11
+297,SEELA,60m,MK,Ericaceous dwarf scrub,Bearberry tundra,12
+298,SEELA,70m,MK,Dryas dwarf scrub,Dryas-lichen tundra,12
+299,SEELA,80m,MK,Mesic graminoid herbaceous,Sedge-dryas tundra,12
+300,SEELA,90m,MK,Dryas dwarf scrub,Dryas-sedge tundra,14
+301,SHEEPCREEK,0m,HC,Mesic graminoid herbaceous,Sedge-dryas tundra,8
+302,SHEEPCREEK,10m,HC,Dryas dwarf scrub,Dryas-sedge tundra,7
+303,SHEEPCREEK,20m,HC,Ericaceous dwarf scrub,Vaccinium tundra,11
+304,SHEEPCREEK,30m,HC,Dryas dwarf scrub,Dryas-sedge tundra,15
+305,SHEEPCREEK,40m,HC,Open low scrub,Mesic shrub birch-ericaceous shrub,10
+306,SHEEPCREEK,50m,HC,Dryas dwarf scrub,Dryas-sedge tundra,7
+307,SHEEPCREEK,60m,HC,Mesic graminoid herbaceous,Sedge-dryas tundra,7
+308,SHEEPCREEK,70m,HC,Mesic graminoid herbaceous,Sedge-dryas tundra,9
+309,SHEEPCREEK,80m,HC,Mesic graminoid herbaceous,Sedge-dryas tundra,12
+310,SHEEPCREEK,90m,KO,Dryas dwarf scrub,Dryas-sedge tundra,17
+311,SIXTYMILE,0m,JP,Lichen,Foliose and fruticose lichen,15
+312,SIXTYMILE,10m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,12
+313,SIXTYMILE,20m,JP,Ericaceous dwarf scrub,Cassiope tundra,14
+314,SIXTYMILE,30m,JP,Ericaceous dwarf scrub,Vaccinium tundra,12
+315,SIXTYMILE,40m,JP,Sparsely vegetated,Sparsely vegetated,15
+316,SIXTYMILE,50m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+317,SIXTYMILE,60m,JP,Ericaceous dwarf scrub,Crowberry tundra,14
+318,SIXTYMILE,70m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+319,SIXTYMILE,80m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+320,SIXTYMILE,90m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+321,SOUTHSTONEBOY,0m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,14
+322,SOUTHSTONEBOY,10m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,16
+323,SOUTHSTONEBOY,20m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,16
+324,SOUTHSTONEBOY,30m,JH,Dryas dwarf scrub,Dryas-sedge tundra,18
+325,SOUTHSTONEBOY,40m,JH,Ericaceous dwarf scrub,Vaccinium tundra,21
+326,SOUTHSTONEBOY,50m,JH,Sparsely vegetated,Sparsely vegetated,5
+327,SOUTHSTONEBOY,60m,JH,Ericaceous dwarf scrub,Vaccinium tundra,15
+328,SOUTHSTONEBOY,70m,JH,Ericaceous dwarf scrub,Crowberry tundra,16
+329,SOUTHSTONEBOY,80m,JH,Ericaceous dwarf scrub,Crowberry tundra,20
+330,SOUTHSTONEBOY,90m,JH,Ericaceous dwarf scrub,Vaccinium tundra,22
+331,SPRINGRIVER,80m,KO,Open low scrub,Willow-low,6
+332,SPRINGRIVER,0m,KO,Mesic forb herbaceous,Mixed herbs,10
+333,SPRINGRIVER,10m,HC,Dryas dwarf scrub,Dryas tundra,13
+334,SPRINGRIVER,20m,KO,Ericaceous dwarf scrub,Vaccinium tundra,10
+335,SPRINGRIVER,30m,HC,Dryas dwarf scrub,Dryas tundra,11
+336,SPRINGRIVER,40m,KO,Dryas dwarf scrub,Dryas tundra,15
+337,SPRINGRIVER,50m,HC,Dryas dwarf scrub,Dryas tundra,11
+338,SPRINGRIVER,60m,KO,Dryas dwarf scrub,Dryas tundra,12
+339,SPRINGRIVER,70m,HC,Dryas dwarf scrub,Dryas tundra,18
+340,SPRINGRIVER,90m,HC,Dryas dwarf scrub,Dryas tundra,19
+341,STONE01,0m,JH,Ericaceous dwarf scrub,Vaccinium tundra,13
+342,STONE01,10m,KO,Ericaceous dwarf scrub,Vaccinium tundra,14
+343,STONE01,20m,JH,Ericaceous dwarf scrub,Vaccinium tundra,15
+344,STONE01,30m,KO,Ericaceous dwarf scrub,Vaccinium tundra,10
+345,STONE01,40m,JH,Ericaceous dwarf scrub,Vaccinium tundra,12
+346,STONE01,50m,KO,Ericaceous dwarf scrub,Vaccinium tundra,14
+347,STONE01,60m,JH,Ericaceous dwarf scrub,Vaccinium tundra,13
+348,STONE01,70m,KO,Ericaceous dwarf scrub,Vaccinium tundra,13
+349,STONE01,80m,JH,Ericaceous dwarf scrub,Vaccinium tundra,13
+350,STONE01,90m,KO,Ericaceous dwarf scrub,Vaccinium tundra,11
+351,STONE02,0m,JH,Ericaceous dwarf scrub,Vaccinium tundra,10
+352,STONE02,10m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,14
+353,STONE02,20m,JH,Ericaceous dwarf scrub,Vaccinium tundra,10
+354,STONE02,30m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,13
+355,STONE02,40m,JH,Ericaceous dwarf scrub,Vaccinium tundra,13
+356,STONE02,50m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,6
+357,STONE02,60m,JH,Ericaceous dwarf scrub,Vaccinium tundra,11
+358,STONE02,70m,LWE,Ericaceous dwarf scrub,Crowberry tundra,13
+359,STONE02,80m,JH,Ericaceous dwarf scrub,Vaccinium tundra,13
+360,STONE02,90m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,11
+361,SWEDE,0m,RP,Ericaceous dwarf scrub,Vaccinium tundra,11
+362,SWEDE,10m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,12
+363,SWEDE,20m,RP,Lichen,Foliose and fruticose lichen,15
+364,SWEDE,30m,SP,Ericaceous dwarf scrub,Vaccinium tundra,14
+365,SWEDE,40m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+366,SWEDE,50m,SP,Ericaceous dwarf scrub,Vaccinium tundra,10
+367,SWEDE,60m,RP,Ericaceous dwarf scrub,Vaccinium tundra,11
+368,SWEDE,70m,SP,Dry forb herbaceous,Alpine herb-sedge,8
+369,SWEDE,80m,RP,Open low scrub,Mesic shrub birch-ericaceous shrub,12
+370,SWEDE,90m,SP,Open low scrub,Mesic shrub birch-ericaceous shrub,12
+371,THISTLE,30m,SP,Open low scrub,Willow-low,16
+372,THISTLE,0m,RP,Lichen,Foliose and fruticose lichen,13
+373,THISTLE,10m,SP,Lichen,Foliose and fruticose lichen,15
+374,THISTLE,20m,RP,Ericaceous dwarf scrub,Vaccinium tundra,12
+375,THISTLE,40m,RP,Open low scrub,Shrub birch-willow,13
+376,THISTLE,50m,SP,Open low scrub,Shrub birch-willow,10
+377,THISTLE,60m,RP,Ericaceous dwarf scrub,Vaccinium tundra,18
+378,THISTLE,70m,SP,Ericaceous dwarf scrub,Vaccinium tundra,20
+379,THISTLE,80m,SP,Open low scrub,Shrub birch-willow,19
+380,THISTLE,90m,SP,Lichen,Foliose and fruticose lichen,12
+381,TOPOFTHEWORLD,0m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,6
+382,TOPOFTHEWORLD,10m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,11
+383,TOPOFTHEWORLD,20m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,8
+384,TOPOFTHEWORLD,30m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+385,TOPOFTHEWORLD,40m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+386,TOPOFTHEWORLD,50m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,10
+387,TOPOFTHEWORLD,60m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+388,TOPOFTHEWORLD,70m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+389,TOPOFTHEWORLD,80m,LWE,Open low scrub,Mesic shrub birch-ericaceous shrub,10
+390,TOPOFTHEWORLD,90m,LWE,Ericaceous dwarf scrub,Vaccinium tundra,11
+391,TOWYK,0m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+392,TOWYK,10m,JP,Dryas dwarf scrub,Dryas tundra,15
+393,TOWYK,20m,JP,Willow dwarf scrub,Willow tundra,16
+394,TOWYK,30m,JP,Ericaceous dwarf scrub,Vaccinium tundra,16
+395,TOWYK,40m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,12
+396,TOWYK,50m,JP,Sparsely vegetated,Sparsely vegetated,17
+397,TOWYK,60m,JP,Open low scrub,Mesic shrub birch-ericaceous shrub,14
+398,TOWYK,70m,JP,Ericaceous dwarf scrub,Vaccinium tundra,14
+399,TOWYK,80m,JP,Dryas dwarf scrub,Dryas tundra,16
+400,TOWYK,90m,JP,Sparsely vegetated,Sparsely vegetated,16
+401,TWELVEMILE,0m,CT,Lichen,Foliose and fruticose lichen,12
+402,TWELVEMILE,10m,CT,Lichen,Foliose and fruticose lichen,12
+403,TWELVEMILE,20m,KO,Lichen,Foliose and fruticose lichen,10
+404,TWELVEMILE,30m,CT,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+405,TWELVEMILE,40m,KO,Lichen,Foliose and fruticose lichen,8
+406,TWELVEMILE,50m,CT,Lichen,Foliose and fruticose lichen,12
+407,TWELVEMILE,60m,KO,Lichen,Foliose and fruticose lichen,6
+408,TWELVEMILE,70m,CT,Needleleaf woodland,White spruce,9
+409,TWELVEMILE,80m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+410,TWELVEMILE,90m,CT,Lichen,Foliose and fruticose lichen,11
+411,UPPERPALDO,0m,JH,Ericaceous dwarf scrub,Crowberry tundra,16
+412,UPPERPALDO,10m,JH,Sparsely vegetated,Sparsely vegetated,18
+413,UPPERPALDO,20m,KO,Sparsely vegetated,Sparsely vegetated,14
+414,UPPERPALDO,30m,KO,Mesic graminoid herbaceous,Sedge-willow tundra,11
+415,UPPERPALDO,40m,JH,Mesic graminoid herbaceous,Sedge-willow tundra,10
+416,UPPERPALDO,50m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+417,UPPERPALDO,60m,JH,Dry graminoid herbaceous,Midgrass-shrub,19
+418,UPPERPALDO,70m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,11
+419,UPPERPALDO,80m,JH,Ericaceous dwarf scrub,Vaccinium tundra,17
+420,UPPERPALDO,90m,JH,Open low scrub,Mesic shrub birch-ericaceous shrub,18
+421,UPPERQUARRY,0m,RP,Mesic graminoid herbaceous,Tussock tundra,11
+422,UPPERQUARRY,10m,RP,Mesic graminoid herbaceous,Tussock tundra,13
+423,UPPERQUARRY,20m,RP,Mesic graminoid herbaceous,Tussock tundra,17
+424,UPPERQUARRY,30m,RP,Mesic graminoid herbaceous,Tussock tundra,10
+425,UPPERQUARRY,40m,RP,Mesic graminoid herbaceous,Tussock tundra,16
+426,UPPERQUARRY,50m,RP,Mesic graminoid herbaceous,Tussock tundra,15
+427,UPPERQUARRY,60m,RP,Mesic graminoid herbaceous,Tussock tundra,11
+428,UPPERQUARRY,70m,RP,Mesic graminoid herbaceous,Tussock tundra,13
+429,UPPERQUARRY,80m,RP,Mesic graminoid herbaceous,Tussock tundra,11
+430,UPPERQUARRY,90m,RP,Mesic graminoid herbaceous,Tussock tundra,15
+431,WHEATEAR,0m,JH,Dryas dwarf scrub,Dryas-sedge tundra,17
+432,WHEATEAR,10m,JH,Lichen,Foliose and fruticose lichen,18
+433,WHEATEAR,20m,RP,Ericaceous dwarf scrub,Cassiope tundra,18
+434,WHEATEAR,30m,JH,Dryas dwarf scrub,Dryas-lichen tundra,19
+435,WHEATEAR,40m,RP,Sparsely vegetated,Sparsely vegetated,15
+436,WHEATEAR,50m,JH,Sparsely vegetated,Sparsely vegetated,12
+437,WHEATEAR,60m,RP,Sparsely vegetated,Sparsely vegetated,14
+438,WHEATEAR,70m,JH,Mesic graminoid herbaceous,Sedge-dryas tundra,14
+439,WHEATEAR,80m,RP,Sparsely vegetated,Sparsely vegetated,18
+440,WHEATEAR,90m,JH,Sparsely vegetated,Sparsely vegetated,6
+441,WICKERSHAM,0m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,13
+442,WICKERSHAM,10m,CT,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+443,WICKERSHAM,20m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,9
+444,WICKERSHAM,30m,CT,Ericaceous dwarf scrub,Vaccinium tundra,14
+445,WICKERSHAM,40m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,10
+446,WICKERSHAM,50m,CT,Open low scrub,Mesic shrub birch-ericaceous shrub,8
+447,WICKERSHAM,60m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,5
+448,WICKERSHAM,70m,CT,Open low scrub,Mesic shrub birch-ericaceous shrub,6
+449,WICKERSHAM,80m,KO,Open low scrub,Mesic shrub birch-ericaceous shrub,7
+450,WICKERSHAM,89.5m,KO,NA,NA,NA
+451,WICKERSHAM,90m,CT,Lichen,Foliose and fruticose lichen,10
