@@ -18,7 +18,7 @@ aerial vehicles, 2018-2019. doi:10.18739/A2R785Q5B.
 
 ## Repository summary
 
-This repository includes scripts for mapping plant functional type aboveground biomass from UAV imagery and Structure from Motion point clouds. Intermediary data files produced are also provided. Note that UAV imagery is not provided here, but can be requested from the author.
+This repository includes scripts and data for mapping plant functional type aboveground biomass from UAV imagery and Structure from Motion point clouds. Intermediary data files produced are also provided. Note that UAV imagery is not provided here, but can be requested from the author.
 
 ## Repository details
 

@@ -188,8 +188,6 @@ compareBiomass = compareBiomass[compareBiomass$PFT != 'SHRUBS',]
 ######################################################################################################
 
 # 7. HANDLE MISSING METRICS ------------------------------------------------------
-
-# 2.4 HANDLE ZERO PREDICTIONS -- METRIC
 # Deal with occurrences where some weight was observed but zero was predicted, have NAs for metric type
 
 # Get all instances where metric is NA and make a data frame for each metric type
@@ -216,16 +214,9 @@ compareBiomass = compareBiomass[!is.na(compareBiomass$metric),]
 ######################################################################################################
 ######################################################################################################
 
-# 8. SAVE TIDY DATA ------------------------------------------------------
+# 8. SPREAD DATA ------------------------------------------------------
 
-write.csv(compareBiomass, outNameTidy, row.names = FALSE)
-
-######################################################################################################
-######################################################################################################
-
-# 9. SPREAD DATA ------------------------------------------------------
-
-# 9.1 SPREAD ------------------------------------------------------
+# 8.1 SPREAD ------------------------------------------------------
 
 compareBiomass_wide = compareBiomass %>% tidyr::spread(metric, weight_predicted)
 compareBiomass_wide = compareBiomass_wide %>% dplyr::rename(weight_predicted = fit)
@@ -233,13 +224,24 @@ compareBiomass_wide = compareBiomass_wide %>% dplyr::rename(weight_predicted_lwr
 compareBiomass_wide = compareBiomass_wide %>% dplyr::rename(weight_predicted_upr = upr)
 compareBiomass_wide = compareBiomass_wide %>% dplyr::rename(weight_predicted_ci = ci)
 
-# 9.2 FILL NAs WITH ZEROS
+# 8.2 FILL NAs WITH ZEROS
 # If there is a very small amount of cover for a particular PFT within a particular quadrat, small differences amongst the metric rasters (fit, ci, lwr, upr) might mean that when classification raster is resampled to appropriate resolution, some of the metric rasters retain the rare PFT while others do not
 
 compareBiomass_wide$weight_predicted_ci[!is.finite(compareBiomass_wide$weight_predicted_ci)] = 0
 compareBiomass_wide$weight_predicted[!is.finite(compareBiomass_wide$weight_predicted)] = 0
 compareBiomass_wide$weight_predicted_lwr[!is.finite(compareBiomass_wide$weight_predicted_lwr)] = 0
 compareBiomass_wide$weight_predicted_upr[!is.finite(compareBiomass_wide$weight_predicted_upr)] = 0
+
+######################################################################################################
+######################################################################################################
+
+# 9. SAVE TIDY DATA ------------------------------------------------------
+
+compareBiomass_tidy = dplyr::rename(compareBiomass_wide, weight_predicted_fit = weight_predicted)
+compareBiomass_tidy = tidyr::gather(compareBiomass_tidy, "metric", "weight_predicted", weight_predicted_ci, weight_predicted_fit, weight_predicted_lwr, weight_predicted_upr)
+compareBiomass_tidy$metric = gsub('weight_predicted_', '', compareBiomass_tidy$metric)
+
+write.csv(compareBiomass_tidy, outNameTidy, row.names = FALSE)
 
 ######################################################################################################
 ######################################################################################################
