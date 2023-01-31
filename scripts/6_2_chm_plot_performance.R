@@ -1,3 +1,14 @@
+######################################################################################################
+######################################################################################################
+
+# CODE DESCRIPTION
+
+# This script plots canopy height model accuracy (observed vs. predicted average and maximum height within quadrats)
+# See manuscript reference in the README.md file for more details
+
+######################################################################################################
+######################################################################################################
+
 library(dplyr)
 library(tidyr)
 library(ggplot2)

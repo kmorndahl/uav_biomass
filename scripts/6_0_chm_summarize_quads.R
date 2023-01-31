@@ -1,6 +1,14 @@
 ######################################################################################################
 ######################################################################################################
 
+# CODE DESCRIPTION
+
+# This script calculates the average and maximum height for each PFT within each quadrat, from the final canopy height model
+# See manuscript reference in the README.md file for more details on methodology
+
+######################################################################################################
+######################################################################################################
+
 # SET OUTPUT DIRECTORY
 
 dir = "*/0_UAV_final/data/"

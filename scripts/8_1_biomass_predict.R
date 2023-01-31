@@ -1,6 +1,16 @@
 ######################################################################################################
 ######################################################################################################
 
+# CODE DESCRIPTION
+
+# This script runs models to predict PFT biomass across UAV footprints
+# Models are mixed effects models with biomass as the response, volume and PFT as predictors, and site as a random effect
+# Models are applied to UAV data to produce per-pixel biomass estimates for each PFT across UAV footprints
+# See manuscript reference in the README.md file for more details on methodology
+
+######################################################################################################
+######################################################################################################
+
 # NOTE: OVERWRITE SET TO TRUE! CHANGE IF NECESSARY
 
 # SET OUTPUT DIRECTORY

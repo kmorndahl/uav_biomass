@@ -1,6 +1,15 @@
 ######################################################################################################
 ######################################################################################################
 
+# CODE DESCRIPTION
+
+# This script creates the fills the final canopy height models
+# Gaps in the primary canopy height model are filled with data from the random forest derived canopy height model
+# See manuscript reference in the README.md file for more details on methodology
+
+######################################################################################################
+######################################################################################################
+
 # SET OUTPUT DIRECTORY
 
 outPath = "*/UAV_chm/results/"

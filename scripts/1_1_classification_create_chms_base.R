@@ -1,6 +1,15 @@
 ######################################################################################################
 ######################################################################################################
 
+# CODE DESCRIPTION
+
+# This script creates 'base' canopy height models (CHMs)
+# These base CHMs are used in the classification of UAV imagery, but are lower quality than the final CHMs produced by this project
+# See manuscript reference in the README.md file for more details
+
+######################################################################################################
+######################################################################################################
+
 # SET OUTPUT DIRECTORY
 
 outPath = '*/UAV_chm/results_base/'

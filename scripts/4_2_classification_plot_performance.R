@@ -1,3 +1,14 @@
+######################################################################################################
+######################################################################################################
+
+# CODE DESCRIPTION
+
+# This script plots PFT classification accuracy (observed vs. predicted percent cover within quadrats)
+# See manuscript reference in the README.md file for more details
+
+######################################################################################################
+######################################################################################################
+
 library(dplyr)
 library(tidyr)
 library(qdapTools)
