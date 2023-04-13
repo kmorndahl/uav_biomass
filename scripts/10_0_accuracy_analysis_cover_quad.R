@@ -1,27 +1,37 @@
 ######################################################################################################
 ######################################################################################################
 
+# CODE DESCRIPTION
+
+# This script analyzes cover prediction accuracy as it relates to plant functional type and vegetation community type and plots the results
+# Data are split into two datasets: presence/absence and presence only
+# We tested for differences between categorical groups (plant functional type and vegetation community type) using Dunn’s tests with Bonferroni adjustments
+# See manuscript reference in the README.md file for more details
+
+######################################################################################################
+######################################################################################################
+
 # SET OUTPUT DIRECTORY
 
-dir = '*/UAV_figures/'
-setwd(dir)
+output_results = TRUE
 
-outNamePFT = 'cover_error_modeling_quad_PFT.png'
-outNameVegComm = 'cover_error_modeling_quad_viereck_coarse.png'
-outNameVegCommPFT = 'cover_error_modeling_quad_viereck_coarse_PFTfacet_n_gt2_shadePercentCover.png'
-outNameCommission = 'cover_error_modeling_quad_PFT_binom_commission.png'
-outNameOmission = 'cover_error_modeling_quad_PFT_binom_omission.png'
+outPath = 'results/'
+
+outNamePFT = 'cover_error_modeling_PFT.png'
+outNameVegComm = 'cover_error_modeling_veg_community.png'
+outNameVegCommPFT = 'cover_error_modeling_veg_community_PFT.png'
+outNameCommission = 'cover_error_modeling_PFT_binom_commission.png'
+outNameOmission = 'cover_error_modeling_PFT_binom_omission.png'
 
 ######################################################################################################
 ######################################################################################################
 
-library(dplyr)
+library(tidyverse)
 library(qdapTools)
 library(ICC)
 library(rstatix)
 library(ggpubr)
 library(RColorBrewer)
-library(ggplot2)
 
 ######################################################################################################
 ######################################################################################################
@@ -30,9 +40,9 @@ library(ggplot2)
 
 # 1.1 READ IN DATA ------------------------------------------------------
 
-coverData = read.csv('*/0_UAV_final/data/0_cover_FINAL.csv', header=T)
-quadData = read.csv('*/0_UAV_final/data/0_quad_attributes_FINAL.csv', header = T)
-siteData = read.csv('*/0_UAV_final/data/0_site_attributes_FINAL.csv', header = T)
+coverData = read.csv('data/0_cover_FINAL.csv', header=T)
+quadData = read.csv('data/0_quad_attributes_FINAL.csv', header = T)
+siteData = read.csv('data/0_site_attributes_FINAL.csv', header = T)
 
 # 1.2 SET GRAPHING PARAMETERS ------------------------------------------------------
 
@@ -180,15 +190,19 @@ PFT =
 PFT
 
 # Save
-ggsave(
-  outNamePFT,
-  PFT,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outNamePFT),
+    PFT,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}
 
 # 4.2 VEGETATION COMMUNITY -- COARSE------------------------------------------------------
 
@@ -208,7 +222,7 @@ nb.cols = length(unique(data_presence$viereck_coarse))
 mycolors = colorRampPalette(RColorBrewer::brewer.pal(8, "Set2"))(nb.cols)
 
 # Plot
-viereck_coarse =
+veg_comm =
   ggplot(data_presence, aes(x = as.factor(viereck_coarse),  y = RPD))+
   geom_boxplot(aes(fill = viereck_coarse))+
   scale_fill_manual(values = mycolors)+
@@ -218,18 +232,22 @@ viereck_coarse =
   theme_minimal()+
   theme(text = element_text(size=theme_text_size), axis.text.x=element_blank(), title = element_text(size=title_text_size))
 
-viereck_coarse
+veg_comm
 
 # Save
-ggsave(
-  outName,
-  outNameVegComm,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outNameVegComm),
+    veg_comm,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}
 
 # 4.3 VEGETATION COMMUNITY -- COARSE -- FACET PFT ------------------------------------------------------
 
@@ -271,7 +289,7 @@ sample_size = veg_data %>%
   dplyr::tally()
 
 # Plot - shade boxplots by average cover percent
-viereck_coarse =
+veg_comm_pft =
   ggplot(veg_data, aes(x = as.factor(viereck_coarse),  y = RPD))+
   geom_boxplot(aes(fill = cover_mean))+
   facet_wrap(~ PFT, scales = 'free')+
@@ -283,24 +301,27 @@ viereck_coarse =
   guides(fill = guide_colorbar(frame.colour = 'black', frame.linewidth = 2, ticks.colour = 'black', ticks.linewidth = 2))+
   theme(axis.title.y = element_text(vjust = 2), plot.tag.position = c(0.703, 0.19), plot.tag = element_text(size = 20, hjust = 0), plot.caption = element_text(hjust = 0.715, vjust = 48, size = 26), text = element_text(size=theme_text_size), axis.text.x = element_text(color = "grey20", size = 18, angle = 45, hjust = 1), title = element_text(size=title_text_size), legend.position = c(0.85, 0.22), legend.justification = c(1,0), legend.title = element_text(size = 26), legend.text = element_text(size = 22))
 
-viereck_coarse
+veg_comm_pft
 
 # Save
-ggsave(
-  outName,
-  outNameVegCommPFT,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outNameVegCommPFT),
+    veg_comm_pft,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}
 
 ######################################################################################################
 ######################################################################################################
 
 # 5. GRAPH PRESENCE/ABSENCE (BINOMIAL) ------------------------------------------------------
-# https://fromthebottomoftheheap.net/2018/12/10/confidence-intervals-for-glms/
 
 # 5.1 FALSE POSITIVE ------------------------------------------------------
 
@@ -334,7 +355,7 @@ stat.test = stat.test %>% add_xy_position(x = "PFT")
 stat.test$p.adj =  signif(stat.test$p.adj, 3)
 
 # Plot
-PFT =
+PFT_biom_commission =
   ggplot(data_binom_predict, aes(x = as.factor(PFT),  y = fit*100))+
   geom_point(size = 6, aes(col = PFT))+
   geom_errorbar(aes(ymin=lwr*100, ymax=upr*100, col = PFT), width=.2, lwd = 2)+
@@ -345,18 +366,22 @@ PFT =
   theme_minimal()+
   theme(text = element_text(size=theme_text_size), title = element_text(size=title_text_size), axis.title.x=element_blank(), axis.text.x=element_blank())
 
-PFT
+PFT_biom_commission
 
-# With legend
-ggsave(
-  outNameCommission,
-  PFT,
-  width = 30,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+# Save
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outNameCommission),
+    PFT_biom_commission,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}
 
 # 5.2 FALSE NEGATIVE ------------------------------------------------------
 
@@ -390,7 +415,7 @@ stat.test = stat.test %>% add_xy_position(x = "PFT")
 stat.test$p.adj =  signif(stat.test$p.adj, 3)
 
 # Plot
-PFT =
+PFT_biom_ommission =
   ggplot(data_binom_predict, aes(x = as.factor(PFT),  y = fit*100))+
   geom_point(size = 6, aes(col = PFT))+
   geom_errorbar(aes(ymin=lwr*100, ymax=upr*100, col = PFT), width=.2, lwd = 2)+
@@ -402,16 +427,19 @@ PFT =
   theme_minimal()+
   theme(text = element_text(size=theme_text_size), title = element_text(size=title_text_size), axis.title.x=element_blank(), axis.text.x=element_blank())
 
-PFT
+PFT_biom_ommission
 
 # Save
-ggsave(
-  outNameOmission,
-  PFT,
-  width = 20,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
-
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outNameOmission),
+    PFT_biom_ommission,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}

@@ -6,12 +6,16 @@
 # This script calculates volume from the final canopy height models
 # See manuscript reference in the README.md file for more details
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT PATH
 
-outPath = "*/UAV_chm/results/"
+output_results = FALSE
+
+outPath = '' # Set output directory if desired
 
 ######################################################################################################
 ######################################################################################################
@@ -73,11 +77,13 @@ cat("\n")
 
 # 5. SAVE RESULTS ------------------------------
 
-setwd(outPath)
+if(output_results){
 
-outVol = paste0(site, '_vol_cm.tif')
+  outVol = paste0(outPath, site, '_vol_cm.tif')
+  
+  raster::writeRaster(vol, outVol)
+  
+  print("Results written to disk")
+  cat("\n")
 
-raster::writeRaster(vol, outVol)
-
-print("Results written to disk")
-cat("\n")
+}

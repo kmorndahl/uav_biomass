@@ -1,10 +1,21 @@
 ######################################################################################################
 ######################################################################################################
 
+# CODE DESCRIPTION
+
+# This script combines the field biomass harvest data and the UAV based biomass estimates and tidies the resulting .csv files
+# See manuscript reference in the README.md file for more details
+
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
+######################################################################################################
+######################################################################################################
+
 # SET OUTPUT DIRECTORY
 
-dir = '*/0_UAV_final/data'
-setwd(dir)
+output_results = FALSE
+
+dir = 'data/'
 
 outName = 'biomass_UAV_data.csv'
 outNameTidy = 'biomass_field_UAV_data_tidy.csv'
@@ -43,7 +54,7 @@ biomassTotal = subset(biomassTotal, select = -c(X))
 
 # 1.3 SAVE ------------------------------------------------------
 
-write.csv(biomassTotal, outName)
+if(output_results){write.csv(biomassTotal, paste0(dir, outName))}
 
 ######################################################################################################
 ######################################################################################################
@@ -51,11 +62,11 @@ write.csv(biomassTotal, outName)
 # 1. READ IN DATA ------------------------------
 
 # Read in field data
-biomassField = read.csv('*/0_UAV_final/data/biomass_field_data.csv')
-coverData = read.csv('*/0_UAV_final/data/classification_field_UAV_data_tidy.csv')
+biomassField = read.csv('data/biomass_field_data.csv')
+coverData = read.csv('data/classification_field_UAV_data_tidy.csv')
 
 # Read in raster data
-biomassUAV = read.csv('*/0_UAV_final/data/biomass_UAV_data.csv')
+biomassUAV = read.csv('data/biomass_UAV_data.csv')
 
 ######################################################################################################
 ######################################################################################################
@@ -241,14 +252,14 @@ compareBiomass_tidy = dplyr::rename(compareBiomass_wide, weight_predicted_fit = 
 compareBiomass_tidy = tidyr::gather(compareBiomass_tidy, "metric", "weight_predicted", weight_predicted_ci, weight_predicted_fit, weight_predicted_lwr, weight_predicted_upr)
 compareBiomass_tidy$metric = gsub('weight_predicted_', '', compareBiomass_tidy$metric)
 
-write.csv(compareBiomass_tidy, outNameTidy, row.names = FALSE)
+if(output_results){write.csv(compareBiomass_tidy, paste0(dir, outNameTidy), row.names = FALSE)}
 
 ######################################################################################################
 ######################################################################################################
 
 # 10. SAVE WIDE DATA ------------------------------------------------------
 
-write.csv(compareBiomass_wide, outNameWide, row.names = FALSE)
+if(output_results){write.csv(compareBiomass_wide, paste0(dir, outNameWide), row.names = FALSE)}
 
 ######################################################################################################
 ######################################################################################################
@@ -282,4 +293,4 @@ compareBiomass_wide$metric = gsub('weight_predicted_', '', compareBiomass_wide$m
 
 # 4.5 SAVE ------------------------------
 
-write.csv(compareBiomass_wide, outNameFinal, row.names = FALSE)
+if(output_results){write.csv(compareBiomass_wide, paste0(dir, outNameFinal), row.names = FALSE)}

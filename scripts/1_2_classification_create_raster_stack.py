@@ -2,6 +2,8 @@
 # ------ CREATES RASTER STACKS OF ALL UAV PREDICTOR DATA ------ #
 # ------------------------------------------------------------- #
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 import os
 import sys
 from UAV_fxns import *

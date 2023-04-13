@@ -4,13 +4,16 @@
 # CODE DESCRIPTION
 
 # This script combines volume predictions from the final canopy height model with field harvest biomass data to prepare for biomass modeling
+# See manuscript reference in the README.md file for more details
 
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-dir = "*/0_UAV_final/data"
+output_results = FALSE
+
+dir = "data/"
 setwd(dir)
 
 outNameTidy = "biomass_volume_data_tidy.csv"
@@ -22,9 +25,9 @@ outNameFinal = "biomass_volume_model_input.csv"
 # 1. IMPORT DATA --------------------------------------------------------------------------------------------------------------------------------
 
 # Read in field data
-biomassData = read.csv('*/0_UAV_final/data/biomass_field_data.csv')
-volumeData = read.csv('*/0_UAV_final/data/volume_data.csv')
-coverData = read.csv('*/0_UAV_final/data/classification_field_UAV_data_tidy.csv')
+biomassData = read.csv('data/biomass_field_data.csv')
+volumeData = read.csv('data/volume_data.csv')
+coverData = read.csv('data/classification_field_UAV_data_tidy.csv')
 
 ######################################################################################################
 ######################################################################################################
@@ -88,7 +91,7 @@ volBiomass$volume[!is.finite(volBiomass$volume)] = 0
 
 # 3. SAVE TIDY BIOMASS/VOLUME DATA --------------------------------------------------------------------------------------------------------------------------------
 
-write.csv(volBiomass, outNameTidy, row.names = FALSE)
+if(output_results){write.csv(volBiomass, paste0(outPath, outNameTidy), row.names = FALSE)}
 
 ######################################################################################################
 ######################################################################################################
@@ -113,4 +116,4 @@ cat("\n")
 
 # 4.2 SAVE ------------------------------
 
-write.csv(volBiomass, outNameFinal, row.names = FALSE)
+if(output_results){write.csv(volBiomass, paste0(outPath, outNameFinal), row.names = FALSE)}

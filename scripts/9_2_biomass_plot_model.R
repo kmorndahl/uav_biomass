@@ -1,21 +1,28 @@
 ######################################################################################################
 ######################################################################################################
 
+# CODE DESCRIPTION
+
+# This script plots the volume/biomass mixed effects model
+# See manuscript reference in the README.md file for more details
+
+######################################################################################################
+######################################################################################################
+
 # SET OUTPUT DIRECTORY
 
-dir = '*/UAV_figures/'
-setwd(dir)
+output_results = TRUE
 
-outName = 'biomass_volume_sqrt_color_minimal_alpha_mixed_effects_model_FINAL.png'
+outPath = 'results/'
+
+outName = 'biomass_volume_mixed_effects_model.png'
 
 ######################################################################################################
 ######################################################################################################
 
-library(dplyr)
-library(tidyr)
+library(tidyverse)
 library(lme4)
 library(yardstick)
-library(ggplot2)
 library(qdapTools)
 
 ######################################################################################################
@@ -96,15 +103,14 @@ LMM_CIs = function(model, data, responseVar, reVar, z, add_random) {
 # 1.2 READ IN DATA AND SET PARAMETERS --------------------------------------------------------------------------------------------------------------------------------
 
 # Read in field data
-volBiomass = read.csv('*/0_UAV_final/data/biomass_volume_model_input.csv')
-coverData = read.csv('*/0_UAV_final/data/classification_field_UAV_data.csv')
+volBiomass = read.csv('data/biomass_volume_model_input.csv')
+coverData = read.csv('data/classification_field_UAV_data.csv')
 
 # 1.3 TIDY FIELD DATA --------------------------------------------------------------------------------------------------------------------------------
 
 # 1.3.1 ADD COVER DATA
 
-volBiomass = dplyr::left_join(volBiomass, coverData, by= c("PFT", "site_code", "quadrat_num"))
-volBiomass = subset(volBiomass, select = -c(X))
+volBiomass = dplyr::left_join(volBiomass, coverData, by= c("PFT" = "PFT_fine", "site_code", "quadrat_num"))
 
 print('Data frames merged, the data frame dimensions are: ')
 print(dim(volBiomass))
@@ -301,12 +307,16 @@ PFT.plot.sqrt =
 
 PFT.plot.sqrt
 
-ggsave(
-  outName,
-  PFT.plot.sqrt,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outName),
+    PFT.plot.sqrt,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}

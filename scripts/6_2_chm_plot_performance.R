@@ -9,22 +9,22 @@
 ######################################################################################################
 ######################################################################################################
 
-library(dplyr)
-library(tidyr)
-library(ggplot2)
+library(tidyverse)
 library(qdapTools)
-library(yardstick)
 library(ggpmisc)
+library(yardstick)
 
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-dir = '*/UAV_figures/'
-outName.mean = 'height_mean_color_minimal.png'
-outName.max = 'height_max_color_minimal.png'
-setwd(dir)
+outName.mean = 'chm_performance_height_mean.png'
+outName.max = 'chm_performance_height_max.png'
+
+output_results = TRUE
+
+outPath = 'results/' # Set output directory if desired
 
 ######################################################################################################
 ######################################################################################################
@@ -32,7 +32,7 @@ setwd(dir)
 # 1. READ IN AND TIDY DATA------------------------------
 
 # Read in height data
-heightData = read.csv('*/0_UAV_final/data/0_height_FINAL.csv')
+heightData = read.csv('data/0_height_FINAL.csv')
 
 ######################################################################################################
 ######################################################################################################
@@ -143,7 +143,8 @@ RMSE.pft.mean = data.pft.mean %>%
   dplyr::group_by(PFT) %>%
   yardstick::rmse(height_observed, height_predicted)
 
-RMSE.pft.mean = dplyr::spread(RMSE.pft.mean, .metric, .estimate)
+RMSE.pft.mean = tidyr::spread(RMSE.pft.mean, .metric, .estimate)
+
 RMSE.pft.mean = subset(RMSE.pft.mean, select = -c(.estimator))
 RMSE.pft.mean$rmse_label = paste0('RMSE = ', round(RMSE.pft.mean$rmse, 2), 'cm')
 
@@ -154,7 +155,7 @@ RMSE.pft.max = data.pft.max %>%
   dplyr::group_by(PFT) %>%
   yardstick::rmse(height_observed, height_predicted)
 
-RMSE.pft.max = dplyr::spread(RMSE.pft.max, .metric, .estimate)
+RMSE.pft.max = tidyr::spread(RMSE.pft.max, .metric, .estimate)
 RMSE.pft.max = subset(RMSE.pft.max, select = -c(.estimator))
 RMSE.pft.max$rmse_label = paste0('RMSE = ', round(RMSE.pft.max$rmse, 2),'cm')
 
@@ -204,18 +205,22 @@ PFT.plot.mean =
 
 PFT.plot.mean
 
-ggsave(
-  outName.mean,
-  PFT.plot.mean,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outName.mean),
+    PFT.plot.mean,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
 
+}
+  
 PFT.plot.max = 
-  ggplot(data.pft.max, aes(x = height_observed,  y = height_predicted, col = PFT, fill = PFT, label = quad_label))+
+  ggplot(data.pft.max, aes(y = height_observed,  x = height_predicted, col = PFT, fill = PFT))+
   geom_point(shape = 21, col = 'black', size = 3, alpha = 0.5)+
   geom_line(aes(y = fit), col = 'black', size = 0.5)+
   geom_abline(slope = 1, intercept = 0, lty = 2) +
@@ -231,12 +236,19 @@ PFT.plot.max =
   scale_fill_manual(values = colors)+
   stat_poly_eq(formula = textformula, geom = 'label', aes(label = paste(..rr.label.., sep = "~~~")), parse = TRUE, label.y = -Inf, label.x = Inf, hjust = 1.1, vjust = -1.3, color = 'grey20', fill = 'white', size = geom_text_size, label.size = NA, alpha = 0.6, label.padding = unit(0.01, "lines"))+
   stat_poly_eq(formula = textformula, geom = 'label', aes(label = paste(..eq.label.., sep = "~~~")), parse = TRUE, label.y = -Inf, label.x = Inf, hjust = 1.05, vjust = -0.3, color = 'grey20', fill = 'white', size = geom_text_size, label.size = NA, alpha = 0.6, label.padding = unit(0.01, "lines"))
+
 PFT.plot.max
 
-ggsave(
-  outName.max,
-  PFT.plot.max,
-  width = 40,
-  height = 30,
-  units = 'cm'
-)
+if(output_results){
+
+  ggsave(
+    paste0(outPath, outName.max),
+    PFT.plot.max,
+    width = 40,
+    height = 30,
+    units = 'cm',    
+    bg = 'white',
+    dpi = 600
+  )
+    
+}

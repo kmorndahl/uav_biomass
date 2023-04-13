@@ -4,13 +4,18 @@
 # CODE DESCRIPTION
 
 # This script masks the final UAV PFT classifications to the minimum extent of the input RGB and multispectral imagery
+# See manuscript reference in the README.md file for more details
+
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
 
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-outPath = "*/UAV_classification/results"
+output_results = FALSE
+
+outPath = '' # Set output directory if desired
 
 ######################################################################################################
 ######################################################################################################
@@ -232,17 +237,19 @@ for(path in classifiedPaths){
 
   # 2.5 SAVE RESULTS ------------------------------
 
-  if(class(classified) != "try-error"){ # Only write output to disk if mask was successful
-
-  setwd(outPath)
-
-  outClassified = paste0(site, '_classified_final.tif')
-
-  raster::writeRaster(classified, outClassified)
-
-  print("Results written to disk")
-  cat("\n")
-
+  if(output_results){
+  
+    if(class(classified) != "try-error"){ # Only write output to disk if mask was successful
+  
+      outClassified = paste0(outPath, site, '_classified_final.tif')
+    
+      raster::writeRaster(classified, outClassified)
+    
+      print("Results written to disk")
+      cat("\n")
+  
+    }
+    
   }
 
 }

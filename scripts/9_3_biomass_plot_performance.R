@@ -1,21 +1,28 @@
 ######################################################################################################
 ######################################################################################################
 
+# CODE DESCRIPTION
+
+# This script plots PFT biomass prediction accuracy (observed vs. predicted biomass within quadrats)
+# See manuscript reference in the README.md file for more details
+
+######################################################################################################
+######################################################################################################
+
 # SET OUTPUT DIRECTORY
 
-dir = '*/UAV_figures/'
-setwd(dir)
+output_results = TRUE
 
-outName = 'biomass_sqrt_color_minimal_all_data_alpha_reorder.png'
+outPath = 'results/'
+
+outName = 'biomass_performance.png'
 
 ######################################################################################################
 ######################################################################################################
 
 library(qdapTools)
-library(dplyr)
-library(tidyr)
+library(tidyverse)
 library(yardstick)
-library(ggplot2)
 library(ggpmisc)
 
 ######################################################################################################
@@ -25,7 +32,7 @@ library(ggpmisc)
 
 # 1.1 READ IN DATA ------------------------------------------------------
 
-compareBiomass = read.csv('*/0_UAV_final/data/0_biomass_FINAL.csv')
+compareBiomass = read.csv('data/0_biomass_FINAL.csv')
 
 # 1.2 DEFINE FUNCTIONS ------------------------------------------------------
 
@@ -173,13 +180,16 @@ PFT.plot =
 
 PFT.plot
 
-ggsave(
-  outName,
-  PFT.plot,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
-
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outName),
+    PFT.plot,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}

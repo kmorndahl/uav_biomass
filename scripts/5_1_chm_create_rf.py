@@ -1,3 +1,9 @@
+# ------------------------------------------------------ #
+# ------ BUILD AND APPLY CHM RANDOM FOREST MODELS ------ #
+# ------------------------------------------------------ #
+
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 import os
 import sys
 import numpy

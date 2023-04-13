@@ -3,6 +3,8 @@
 # ------------------------------------------- #
 # Hyperparamter tuning is performed on a subset of sites selected to represent the range of vegetation community types in the dataset
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 import os
 import sys
 import time

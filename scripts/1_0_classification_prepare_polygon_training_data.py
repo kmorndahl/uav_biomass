@@ -4,6 +4,8 @@
 # Creates field to uniquely identify polygons
 # Converts PFT names to categorical integer field
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 import os
 import sys
 from osgeo import gdal, ogr

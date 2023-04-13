@@ -3,23 +3,23 @@
 
 # SET OUTPUT DIRECTORY
 
-dir = '*/UAV_figures/'
-setwd(dir)
+output_results = TRUE
 
-outNamePFT = 'biomass_error_modeling_quad_PFT.png'
-outNameVegComm = 'biomass_error_modeling_quad_viereck_coarse_n_gt1.png'
-outNameVegCommPFT = 'biomass_error_modeling_quad_viereck_coarse_PFTfacet_n_gt2_shadePercentCover.png'
+outPath = 'results/'
+
+outNamePFT = 'biomass_error_modeling_PFT.png'
+outNameVegComm = 'biomass_error_modeling_veg_community.png'
+outNameVegCommPFT = 'biomass_error_modeling_veg_community_PFT.png'
 
 ######################################################################################################
 ######################################################################################################
 
-library(dplyr)
+library(tidyverse)
 library(qdapTools)
 library(ICC)
 library(rstatix)
 library(ggpubr)
 library(RColorBrewer)
-library(ggplot2)
 
 ######################################################################################################
 ######################################################################################################
@@ -28,10 +28,10 @@ library(ggplot2)
 
 # 1.1 READ IN DATA ------------------------------------------------------
 
-biomassData = read.csv('*/0_UAV_final/data/0_biomass_FINAL.csv', header=T)
-quadData = read.csv('*/0_UAV_final/data/0_quad_attributes_FINAL.csv', header = T)
-siteData = read.csv('*/0_UAV_final/data/0_site_attributes_FINAL.csv', header = T)
-coverData = read.csv('*/0_UAV_final/data/classification_field_UAV_data.csv')
+biomassData = read.csv('data/0_biomass_FINAL.csv', header=T)
+quadData = read.csv('data/0_quad_attributes_FINAL.csv', header = T)
+siteData = read.csv('data/0_site_attributes_FINAL.csv', header = T)
+coverData = read.csv('data/classification_field_UAV_data.csv')
 
 # 1.2 GET CORRECT MODEL ------------------------------------------------------
 
@@ -62,7 +62,7 @@ data = dplyr::left_join(data, coverData, by = c('site_code', 'quadrat_num', 'PFT
 
 # 2.2 TIDY ------------------------------------------------------
 
-data = na.omit(data %>% dplyr::select(-c(X.1, X.x, X.y)))
+data = na.omit(data %>% dplyr::select(-c(id.x, id.y)))
 
 # 2.3 REORDER PFTs ------------------------------------------------------
 
@@ -207,15 +207,19 @@ PFT =
 PFT
 
 # Save
-ggsave(
-  outNamePFT,
-  PFT,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outNamePFT),
+    PFT,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}
 
 # 5.2.2 VEGETATION COMMUNITY -- COARSE------------------------------------------------------
 
@@ -242,7 +246,7 @@ nb.cols = length(unique(veg_data$viereck_coarse))
 mycolors = colorRampPalette(RColorBrewer::brewer.pal(8, "Set2"))(nb.cols)
 
 # Plot
-viereck_coarse =
+veg_comm =
   ggplot(veg_data, aes(x = as.factor(viereck_coarse),  y = RPD))+
   geom_boxplot(aes(fill = viereck_coarse))+
   scale_fill_manual(values = mycolors)+
@@ -252,18 +256,22 @@ viereck_coarse =
   theme_minimal()+
   theme(text = element_text(size=theme_text_size), axis.text.x=element_blank(), title = element_text(size=title_text_size))
 
-viereck_coarse
+veg_comm
 
 # Save
-ggsave(
-  outNameVegComm,
-  viereck_coarse,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outNameVegComm),
+    veg_comm,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}
 
 # 5.2.3 VEGETATION COMMUNITY -- COARSE -- FACET PFT ------------------------------------------------------
 
@@ -305,7 +313,7 @@ sample_size = veg_data %>%
   dplyr::tally()
 
 # Plot - shade boxplots by average cover percent
-viereck_coarse =
+veg_comm_pft =
   ggplot(veg_data, aes(x = as.factor(viereck_coarse),  y = RPD))+
   geom_boxplot(aes(fill = cover_mean * 4))+
   facet_wrap(~ PFT, scales = 'free')+
@@ -317,15 +325,19 @@ viereck_coarse =
   guides(fill = guide_colorbar(frame.colour = 'black', frame.linewidth = 2, ticks.colour = 'black', ticks.linewidth = 2))+
   theme(plot.tag.position = c(0.703, 0.19), plot.tag = element_text(size = 20, hjust = 0), plot.caption = element_text(hjust = 0.715, vjust = 48, size = 26), text = element_text(size=theme_text_size), axis.text.x = element_text(color = "grey20", size = 18, angle = 45, hjust = 1), title = element_text(size=title_text_size), legend.position = c(0.868, 0.22), legend.justification = c(1,0), legend.title = element_text(size = 26), legend.text = element_text(size = 22))
 
-viereck_coarse
+veg_comm_pft
 
 # Save
-ggsave(
-  outNameVegCommPFT,
-  viereck_coarse,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outNameVegCommPFT),
+    veg_comm_pft,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}

@@ -7,14 +7,16 @@
 # These base CHMs are used in the classification of UAV imagery, but are lower quality than the final CHMs produced by this project
 # See manuscript reference in the README.md file for more details
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-outPath = '*/UAV_chm/results_base/'
+output_results = FALSE
 
-setwd(outPath)
+outPath = '' # Set output directory if desired
 
 ######################################################################################################
 ######################################################################################################
@@ -59,7 +61,7 @@ setwd(outPath)
 
 library(raster)
 library(lidR)
-source('*/0_UAV_final/scripts/UAV_lidR_fxns.R')
+source('scripts/UAV_lidR_fxns.R')
 
 params = commandArgs(trailingOnly = TRUE)
 
@@ -284,13 +286,16 @@ chm.idw[chm.idw < 0] = 0 # Convert negative values to zero
 
 # 8. SAVE RESULTS ------------------------------
 
-chm = chm.idw
+if(output_results){
+  
+  chm = chm.idw
+  
+  outCHM = paste0(outPath, site, '_CHM_base.tif')
+  
+  raster::writeRaster(chm, outCHM)
+  
+  print("Final CHM raster written to disk:")
+  print(outCHM)
+  cat("\n")
 
-outCHM = paste0(site, '_CHM_base.tif')
-
-raster::writeRaster(chm, outCHM)
-
-print("Final CHM raster written to disk:")
-print(outCHM)
-cat("\n")
-
+}

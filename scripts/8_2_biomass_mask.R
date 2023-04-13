@@ -4,14 +4,19 @@
 # CODE DESCRIPTION
 
 # This script masks the final UAV PFT biomass predictions to match the canopy height models
+# See manuscript reference in the README.md file for more details
+
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
 
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-outPathFit = "*/UAV_biomass/results_zeros_FINAL/"
-outPathCI = "*/UAV_biomass/results_zeros_FINAL/"
+output_results = FALSE
+
+outPathFit = ""
+outPathCI = ""
 
 ######################################################################################################
 ######################################################################################################
@@ -184,28 +189,28 @@ for(biomassPath in biomassPaths){ # START biomass LOOP
   ######################################################################################################
   
   # 5. SAVE RESULTS ------------------------------
+
+  if(output_results){
   
-  if(class(biomass) != "try-error"){ # Only write output to disk if mask was successful
-    
-    outBiomass = file
-    
-    if(grepl('fit', outBiomass)){
+    if(class(biomass) != "try-error"){ # Only write output to disk if mask was successful
       
-      setwd(outPathFit)
-
-      raster::writeRaster(biomass, outBiomass)
+      outBiomass = file
       
-      print("Results written to disk -- fit folder")
-      cat("\n")
-      
-    } else{
-      
-      setwd(outPathCI)
-
-      raster::writeRaster(biomass, outBiomass)
-      
-      print("Results written to disk -- ci folder")
-      cat("\n")
+      if(grepl('fit', outBiomass)){
+        
+        raster::writeRaster(biomass, paste0(outPathFit, outBiomass))
+        
+        print("Results written to disk -- fit folder")
+        cat("\n")
+        
+      } else{
+        
+        raster::writeRaster(biomass, paste0(outPathCI, outBiomass))
+        
+        print("Results written to disk -- ci folder")
+        cat("\n")
+        
+      }
       
     }
     

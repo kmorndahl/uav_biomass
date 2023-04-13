@@ -8,6 +8,8 @@
 # Models are applied to UAV data to produce per-pixel biomass estimates for each PFT across UAV footprints
 # See manuscript reference in the README.md file for more details on methodology
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 ######################################################################################################
 ######################################################################################################
 
@@ -15,7 +17,9 @@
 
 # SET OUTPUT DIRECTORY
 
-outPath = "*/UAV_biomass/results_NAs_FINAL/"
+output_results = FALSE
+
+outPath = ''
 
 ######################################################################################################
 ######################################################################################################
@@ -30,8 +34,8 @@ library(lme4)
 library(data.table)
 
 # Read in field data
-volBiomass = read.csv('*/0_UAV_final/data/biomass_volume_model_input.csv')
-coverData = read.csv('*/0_UAV_final/data/classification_field_UAV_data_tidy.csv')
+volBiomass = read.csv('data/biomass_volume_model_input.csv')
+coverData = read.csv('data/classification_field_UAV_data_tidy.csv')
 
 # Gather volume rasters
 volPaths = list.files(path = '*/UAV_chm/results', pattern = "_vol_cm.tif$", full.names = TRUE)
@@ -430,8 +434,6 @@ if(add_random == FALSE){
 # 3.3 CONVERT BACK TO RASTER --------------------------------------------------------------------------------------------------------------------------------
 # https://gis.stackexchange.com/questions/365949/linear-regresion-at-each-raster-pixels-value-to-predict-future-value-in-r-lang
 
-setwd(outPath)
-
 # 3.3.1 ALL PFTs --------------------------------------------------------------------------------------------------------------------------------
 
 # FIT
@@ -455,7 +457,7 @@ if(class(fit_raster) != "try-error"){
 }
 
 # Write to disk -- square root -- origin
-raster::writeRaster(fit_raster, paste0(site, "_fit_biomass.tif"), overwrite=TRUE)
+if(output_results){raster::writeRaster(fit_raster, paste0(outPath, site, "_fit_biomass.tif"), overwrite=TRUE)}
 print('All PFT biomass prediction raster written to disk (square root through origin)')
 cat("\n")
 
@@ -480,7 +482,7 @@ if(class(lwr_raster) != "try-error"){
 }
 
 # Write to disk -- square root -- origin
-raster::writeRaster(lwr_raster, paste0(site, "_lwr", suffix), overwrite=TRUE)
+if(output_results){raster::writeRaster(lwr_raster, paste0(outPath, site, "_lwr", suffix), overwrite=TRUE)}
 print('All PFT biomass lower limit raster written to disk (square root through origin)')
 cat("\n")
 
@@ -505,7 +507,7 @@ if(class(upr_raster) != "try-error"){
 }
 
 # Write to disk -- square root -- origin
-raster::writeRaster(upr_raster, paste0(site, "_upr", suffix), overwrite=TRUE)
+if(output_results){raster::writeRaster(upr_raster, paste0(outPath, site, "_upr", suffix), overwrite=TRUE)}
 print('All PFT biomass upper limit raster written to disk (square root through origin)')
 cat("\n")
 
@@ -530,7 +532,7 @@ if(class(ci_raster) != "try-error"){
 }
 
 # Write to disk -- square root -- origin
-raster::writeRaster(ci_raster, paste0(site, "_ci", suffix), overwrite=TRUE)
+if(output_results){raster::writeRaster(ci_raster, paste0(outPath, site, "_ci", suffix), overwrite=TRUE)}
 print('All PFT biomass confidence interval raster written to disk (square root through origin)')
 cat("\n")
 
@@ -554,18 +556,20 @@ for(val in unique(classifiedFinal)){
   PFT_ci_raster = raster::mask(ci_raster, PFTmask)
 
   # Write to disk
-  raster::writeRaster(PFT_fit_raster, paste0(site, "_", PFTname, "_fit_biomass.tif"), overwrite=TRUE)
-  print(paste0(PFTname, ' biomass prediction raster written to disk (square root through origin)'))
-  cat("\n")
-  raster::writeRaster(PFT_lwr_raster, paste0(site, "_", PFTname, "_lwr", suffix), overwrite=TRUE)
-  print(paste0(PFTname, ' biomass lower limit raster written to disk (square root through origin)'))
-  cat("\n")
-  raster::writeRaster(PFT_upr_raster, paste0(site, "_", PFTname, "_upr", suffix), overwrite=TRUE)
-  print(paste0(PFTname, ' biomass upper limit raster written to disk (square root through origin)'))
-  cat("\n")
-  raster::writeRaster(PFT_ci_raster, paste0(site, "_", PFTname, "_ci", suffix), overwrite=TRUE)
-  print(paste0(PFTname, ' biomass confidence interval raster written to disk (square root through origin)'))
-  cat("\n")
+  if(output_results){
+    raster::writeRaster(PFT_fit_raster, paste0(site, "_", PFTname, "_fit_biomass.tif"), overwrite=TRUE)
+    print(paste0(PFTname, ' biomass prediction raster written to disk (square root through origin)'))
+    cat("\n")
+    raster::writeRaster(PFT_lwr_raster, paste0(site, "_", PFTname, "_lwr", suffix), overwrite=TRUE)
+    print(paste0(PFTname, ' biomass lower limit raster written to disk (square root through origin)'))
+    cat("\n")
+    raster::writeRaster(PFT_upr_raster, paste0(site, "_", PFTname, "_upr", suffix), overwrite=TRUE)
+    print(paste0(PFTname, ' biomass upper limit raster written to disk (square root through origin)'))
+    cat("\n")
+    raster::writeRaster(PFT_ci_raster, paste0(site, "_", PFTname, "_ci", suffix), overwrite=TRUE)
+    print(paste0(PFTname, ' biomass confidence interval raster written to disk (square root through origin)'))
+    cat("\n")
+  }
 
 }
 

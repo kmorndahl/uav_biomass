@@ -7,12 +7,16 @@
 # Gaps in the primary canopy height model are filled with data from the random forest derived canopy height model
 # See manuscript reference in the README.md file for more details on methodology
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-outPath = "*/UAV_chm/results/"
+output_results = FALSE
+
+outPath = '' # Set output directory if desired
 
 classifiedPath = "*/UAV_classification/results"
 
@@ -191,14 +195,16 @@ cat("\n")
 
 # 9. SAVE INTERMEDIATE RESULTS ------------------------------
 
-setwd(outPath)
+if(output_results){
 
-outCHMrf = paste0(site, '_CHM_filled.tif')
+  outCHMrf = paste0(outPath, site, '_CHM_filled.tif')
+  
+  raster::writeRaster(chmRF_final, outCHMrf)
+  
+  print("Results written to disk")
+  cat("\n")
 
-raster::writeRaster(chmRF_final, outCHMrf)
-
-print("Results written to disk")
-cat("\n")
+}
 
 ######################################################################################################
 ######################################################################################################
@@ -294,14 +300,16 @@ if(class(chmRF_final) != "try-error"){
 
 # 11. SAVE FINAL RESULTS ------------------------------
 
-if(class(chmRF_final) != "try-error"){ # Only write output to disk if mask was successful
-  
-  setwd(outPath)
-  
-  outCHMfinal = paste0(site, '_CHM_final.tif')
-  
-  raster::writeRaster(chmRF_final, outCHMfinal)
-  
-  print("Results written to disk")
-  cat("\n")
+if(output_results){
+
+  if(class(chmRF_final) != "try-error"){ # Only write output to disk if mask was successful
+    
+    outCHMfinal = paste0(outPath, site, '_CHM_final.tif')
+    
+    raster::writeRaster(chmRF_final, outCHMfinal)
+    
+    print("Results written to disk")
+    cat("\n")
+  }
+
 }

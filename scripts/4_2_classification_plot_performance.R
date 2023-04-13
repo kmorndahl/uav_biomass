@@ -9,28 +9,28 @@
 ######################################################################################################
 ######################################################################################################
 
-library(dplyr)
-library(tidyr)
+library(tidyverse)
 library(qdapTools)
-library(yardstick)
-library(ggplot2)
 library(ggpmisc)
+library(yardstick)
 
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-dir = '*/UAV_figures/'
-outName = 'cover_color_minimal_alpha.png'
-setwd(dir)
+outName = 'classification_performance.png'
+
+output_results = TRUE
+
+outPath = 'results/' # Set output directory if desired
 
 ######################################################################################################
 ######################################################################################################
 
 # 1. READ IN DATA AND SET PARAMETERS ------------------------------------------------------
 
-coverTotal = read.csv('*/0_UAV_final/data/0_cover_FINAL.csv', header = TRUE)
+coverTotal = read.csv('data/0_cover_FINAL.csv', header = TRUE)
 
 # Lookup information
 PFTcolors = c('darkorange', 'green4', 'cyan4', 'chartreuse3', 'darkseagreen3', 'yellow3', 'burlywood4', 'dimgray', 'mediumaquamarine')
@@ -142,7 +142,7 @@ coverTotal = dplyr::left_join(coverTotal, RMSE_relative, by = c('PFT'))
 
 # Plot
 PFTplot =
-  ggplot(coverTotal, aes(y = cover_observed,  x = cover_predicted, col = PFT, fill = PFT, label = quad_label))+
+  ggplot(coverTotal, aes(y = cover_observed,  x = cover_predicted, col = PFT, fill = PFT))+
   geom_point(shape = 21, col = 'black', size = 3,alpha = 0.5)+
   geom_line(aes(y = fit), col = 'black', size = 0.5)+
   geom_abline(slope = 1, intercept = 0, lty = 2) +
@@ -162,13 +162,17 @@ PFTplot =
   stat_poly_eq(formula = y ~ x, geom = 'label', aes(label = paste(..eq.label.., sep = "~~~")), parse = TRUE, label.y = -Inf, label.x = Inf, hjust = 1.05, vjust = -0.3, color = 'grey20', fill = 'white', size = geom_text_size, label.size = NA, alpha = 0.6, label.padding = unit(0.01, "lines"))
 PFTplot
 
-ggsave(
-  outName,
-  PFTplot,
-  width = 40,
-  height = 30,
-  units = 'cm',
-  bg = 'white',
-  dpi = 600
-)
+if(output_results){
+  
+  ggsave(
+    paste0(outPath, outName),
+    PFTplot,
+    width = 40,
+    height = 30,
+    units = 'cm',
+    bg = 'white',
+    dpi = 600
+  )
+  
+}
 

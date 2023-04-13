@@ -4,6 +4,9 @@
 # CODE DESCRIPTION
 
 # This script gathers the PFT classification accuracy results from each site and aggregates them
+# See manuscript reference in the README.md file for more details
+
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
 
 ######################################################################################################
 ######################################################################################################
@@ -18,13 +21,15 @@ library(ggpmisc)
 ######################################################################################################
 ######################################################################################################
 
-# SET OUTPUT DIRECTORY
+# SET DIRECTORIES
 
-dir = '*/0_UAV_final/data'
 outName = 'classification_field_UAV_data.csv'
 outNameTidy = 'classification_field_UAV_data_tidy.csv'
 outNameFinal = '0_cover_FINAL.csv'
-setwd(dir)
+
+output_results = FALSE
+
+outPath = '' # Set output directory if desired
 
 fileDir = '*/UAV_classification/results/'
 
@@ -51,7 +56,7 @@ for(path in paths){
 
 # 1.3 SAVE TO DISK ------------------------------------------------------
 
-write.csv(coverTotal, outName, row.names = FALSE)
+if(output_results){write.csv(coverTotal, paste0(outPath, outName), row.names = FALSE)}
 
 ######################################################################################################
 ######################################################################################################
@@ -69,7 +74,7 @@ coverTotal$PFT_fine = factor(coverTotal$PFT_fine, levels = c("DECIDUOUS SHRUBS",
 names(coverTotal) = c('site_code', 'quadrat_num', 'PFT', 'cover_observed', 'cover_predicted')
 
 # Save tidy data
-write.csv(coverTotal, outNameTidy, row.names = FALSE)
+if(output_results){write.csv(coverTotal, paste0(outPath, outNameTidy), row.names = FALSE)}
 
 ######################################################################################################
 ######################################################################################################
@@ -104,5 +109,5 @@ id = 1:nrow(coverTotal)
 coverTotal = cbind(id, coverTotal)
 
 # Save final data
-write.csv(coverTotal, outNameFinal, row.names = FALSE)
+if(output_results){write.csv(coverTotal, paste0(outPath, outNameFinal), row.names = FALSE)}
 

@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------- #
+# ------ AGGREGATE RANDOM FOREST CLASSIFICATION FEATURE IMPORTANCE ------ #
+# ----------------------------------------------------------------------- #
+
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 import os
 import sys
 import glob

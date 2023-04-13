@@ -2,6 +2,8 @@
 # ------ CREATE BASH SCRIPTS THAT REFERENCE UAV FILES ------------------------ #
 # ---------------------------------------------------------------------------- #
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 import sys
 import os
 from UAV_fxns import *

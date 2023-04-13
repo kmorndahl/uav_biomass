@@ -6,13 +6,16 @@
 # This script calculates the average and maximum height for each PFT within each quadrat, from the final canopy height model
 # See manuscript reference in the README.md file for more details on methodology
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-dir = "*/0_UAV_final/data/"
-setwd(dir)
+output_results = FALSE
+
+dir = "data/"
 
 quadratName = "UAV_quadrats_final.shp"
 outName = 'height_UAV_data.csv'
@@ -33,7 +36,7 @@ library(dplyr)
 # 1. READ IN GEOSPATIAL DATA ------------------------------
 
 # Load quadrat shapefile
-allQuadrats = sf::st_read(quadratName)
+allQuadrats = sf::st_read(paste0(dir, quadratName))
 
 # Get all CHMs
 chmPaths = list.files(path = chmPath, pattern = "CHM_final.tif$", full.names = TRUE)
@@ -205,4 +208,4 @@ for(chmPath in chmPaths){ # START CHM LOOP
   } # END QUADRAT LOOP
 } # END CHM LOOP
 
-write.csv(heightTotals, outName, row.names = FALSE)
+if(output_results){write.csv(heightTotals, paste0(dir, outName), row.names = FALSE)}

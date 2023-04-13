@@ -6,13 +6,18 @@
 # This script calculates total volume for each PFT within each quadrat
 # See manuscript reference in the README.md file for more details on methodology
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-outPath = '*/0_UAV_final/data/'
 outName = 'volume_data.csv'
+
+output_results = FALSE
+
+outPath = '' # Set output directory if desired
 
 ######################################################################################################
 ######################################################################################################
@@ -26,7 +31,7 @@ library(raster)
 # 1. READ IN DATA AND SET PARAMETERS ------------------------------
 
 # Load quadrat shapefile
-quadratPath = "*/0_UAV_final/data/UAV_quadrats_final.shp"
+quadratPath = "data/UAV_quadrats_final.shp"
 allQuadrats = sf::st_read(quadratPath)
 allQuadrats = allQuadrats[allQuadrats$quadrat != '89.5m',] # Remove 89.5m quadrat (only relevant for Wickersham)
 allQuadrats$quadrat = droplevels(as.factor(allQuadrats$quadrat)) # Drop levels
@@ -194,7 +199,7 @@ for(volPath in volPaths){ # START vol LOOP
 
 setwd(outPath)
 
-write.csv(volumeTotals, outName)
+if(output_results){write.csv(volumeTotals, paste0(outPath, outName))}
 
 print("Results written to disk")
 cat("\n")

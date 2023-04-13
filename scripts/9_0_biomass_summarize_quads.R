@@ -4,15 +4,18 @@
 # CODE DESCRIPTION
 
 # This script masks the final UAV PFT classifications to the minimum extent of the input RGB and multispectral imagery
+# See manuscript reference in the README.md file for more details
+
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
 
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-outPath = "*/UAV_biomass/results_NAs_FINAL/"
+output_results = FALSE
 
-setwd(outPath)
+outPath = ''
 
 ######################################################################################################
 ######################################################################################################
@@ -30,7 +33,7 @@ params = commandArgs(trailingOnly = TRUE)
 # 1.2 READ IN DATA AND SET PARAMETERS ------------------------------
 
 # Load quadrat shapefile
-quadratPath = "*/0_UAV_final/data/UAV_quadrats_final.shp"
+quadratPath = "data/UAV_quadrats_final.shp"
 allQuadrats = sf::st_read(quadratPath)
 
 # Get classified rasters
@@ -226,4 +229,4 @@ for(biomassPath in siteBiomassPaths){ # START metric LOOP
 
 setwd(outPath)
 
-write.csv(biomassRaster, paste0(site, '_UAV_biomass.csv'))
+if(output_results){write.csv(biomassRaster, paste0(outPath, site, '_UAV_biomass.csv'))}

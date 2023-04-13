@@ -6,12 +6,16 @@
 # This script creates the final canopy height models, derived from UAV point clouds
 # See manuscript reference in the README.md file for more details on methodology
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-outPath = '*/UAV_chm/results/'
+output_results = FALSE
+
+outPath = '' # Set output directory if desired
 
 ######################################################################################################
 ######################################################################################################
@@ -62,7 +66,7 @@ library(lidR)
 library(sf)
 library(dplyr)
 library(tidyr)
-source('*/0_UAV_final/scripts/UAV_lidR_fxns.R')
+source('scripts/UAV_lidR_fxns.R')
 
 params = commandArgs(trailingOnly = TRUE)
 
@@ -419,41 +423,42 @@ chm = raster::mask(chm.idw, chm.tin)
 
 # 9. SAVE RESULTS ------------------------------
 
-setwd(outPath)
+if(output_results){
 
-outLAS = paste0(site, '_classified.las')
-outDTM = paste0(site, '_DTM.tif')
-outCHM.idw = paste0(site, '_CHM_idw.tif')
-outCHM.tin = paste0(site, '_CHM_tin.tif')
-outCHM = paste0(site, '_CHM.tif')
+  outLAS = paste0(outPath, site, '_classified.las')
+  outDTM = paste0(outPath, site, '_DTM.tif')
+  outCHM.idw = paste0(outPath, site, '_CHM_idw.tif')
+  outCHM.tin = paste0(outPath, site, '_CHM_tin.tif')
+  outCHM = paste0(outPath, site, '_CHM.tif')
+  
+  lidR::writeLAS(las.classified, outLAS)
+  
+  print("Classified point cloud written to disk:")
+  print(outLAS)
+  cat("\n")
+  
+  raster::writeRaster(dtm, outDTM)
+  
+  print("Final DTM raster written to disk:")
+  print(outDTM)
+  cat("\n")
+  
+  raster::writeRaster(chm.idw, outCHM.idw)
+  
+  print("Final idw CHM raster written to disk:")
+  print(outCHM.idw)
+  cat("\n")
+  
+  raster::writeRaster(chm.tin, outCHM.tin)
+  
+  print("Final tin CHM raster written to disk:")
+  print(outCHM.tin)
+  cat("\n")
+  
+  raster::writeRaster(chm, outCHM)
+  
+  print("Final CHM raster written to disk:")
+  print(outCHM)
+  cat("\n")
 
-lidR::writeLAS(las.classified, outLAS)
-
-print("Classified point cloud written to disk:")
-print(outLAS)
-cat("\n")
-
-raster::writeRaster(dtm, outDTM)
-
-print("Final DTM raster written to disk:")
-print(outDTM)
-cat("\n")
-
-raster::writeRaster(chm.idw, outCHM.idw)
-
-print("Final idw CHM raster written to disk:")
-print(outCHM.idw)
-cat("\n")
-
-raster::writeRaster(chm.tin, outCHM.tin)
-
-print("Final tin CHM raster written to disk:")
-print(outCHM.tin)
-cat("\n")
-
-raster::writeRaster(chm, outCHM)
-
-print("Final CHM raster written to disk:")
-print(outCHM)
-cat("\n")
-
+}

@@ -5,14 +5,16 @@
 
 # This script combines PFT height predictions from the final canopy height model (predicted) and observations from the field (observed)
 # It then tidies the data for plotting
+# See manuscript reference in the README.md file for more details
 
 ######################################################################################################
 ######################################################################################################
 
 # SET OUTPUT DIRECTORY
 
-dir = "*/0_UAV_final/data"
-setwd(dir)
+output_results = FALSE
+
+dir = "data/"
 
 outNameTidy = 'height_field_UAV_data_tidy.csv'
 outNameFinal = '0_height_FINAL.csv'
@@ -29,11 +31,11 @@ library(tidyr)
 # 1. READ IN DATA------------------------------
 
 # Read in field data
-heightField = read.csv('height_field_data.csv', header=T)
-coverData = read.csv('classification_field_UAV_data_tidy.csv')
+heightField = read.csv(paste0(dir, 'height_field_data.csv'), header=T)
+coverData = read.csv(paste0(dir, 'classification_field_UAV_data_tidy.csv'))
 
 # Read in UAV height (CHM) data
-heightUAV = read.csv('height_UAV_data.csv')
+heightUAV = read.csv(paste0(dir, 'height_UAV_data.csv'))
 
 ######################################################################################################
 ######################################################################################################
@@ -133,7 +135,7 @@ allHeight = rbind(compareHeight, totalHeight)
 
 # 4. SAVE TIDY HEIGHT DATA
 
-write.csv(allHeight, outNameTidy, row.names = FALSE)
+if(output_results){write.csv(allHeight, paste0(dir, outNameTidy), row.names = FALSE)}
 
 ######################################################################################################
 ######################################################################################################
@@ -192,4 +194,4 @@ allHeight = cbind(id, allHeight)
 
 # 5.5 SAVE ------------------------------
 
-write.csv(allHeight, outNameFinal, row.names = FALSE)
+if(output_results){write.csv(allHeight, paste0(dir, outNameFinal), row.names = FALSE)}

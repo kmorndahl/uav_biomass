@@ -4,6 +4,8 @@
 # Splits are grouped by polygon ID
 # Splits are stratified by PFT
 
+# NOTE: UAV products necessary for running this code are not hosted at github, see author for access
+
 import os
 import sys
 import pandas
